@@ -1,7 +1,20 @@
 <HTML>
 
-<HEAD>
-   <HTA:APPLICATION SCROLL="no" SYSMENU="yes" ICON="utils/janelinha.ico" VERSION="1.0" INNERBORDER="no" BORDER="yes">
+   <HEAD>
+      <HTA:APPLICATION 
+         SCROLL="no" 
+         SYSMENU="yes" 
+         ICON="utils/janelinha.ico"
+         VERSION="3.0"
+         INNERBORDER="no"
+         APPLICATIONNAME="CPDTools"
+         BORDER="thin"
+         CONTEXTMENU="no"
+         MAXIMIZEBUTTON="no"
+         SINGLEINSTANCE="yes"
+         CAPTION="yes"
+         SELECTION="no"
+      />
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <TITLE>MenuCPD</TITLE>
 
@@ -66,59 +79,59 @@
                   {
                         "name": "DCP-8080DN - W10x64",
                         "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP-8080DN%20-%20W10x64.EXE"
-                    },
-                    {
+                     },
+                     {
                         "name": "HL-1210W - x32",
                         "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20HL-1210W%20-%20x32.EXE"
-                    },
-                    {
+                     },
+                     {
                         "name": "HL-1210W - x64",
                         "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20HL-1210W%20-%20x64.EXE"
-                    },
-                    {
+                     },
+                     {
                         "name": "HL-5450DN",
                         "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20HL-5450DN.EXE"
-                    },
-                    {
+                     },
+                     {
                         "name": "L6902DW",
                         "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20L6902DW.EXE"
-                    },
-                    {
+                     },
+                     {
                         "name": "L8850CDW",
                         "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20L8850CDW.EXE"
-                    },
-                    {
+                     },
+                     {
                         "name": "MFC 7360N",
                         "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20MFC%207360N.EXE"
-                    },
-                    {
+                     },
+                     {
                         "name": "MFC L5902DW",
                         "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20MFC%20L5902DW.EXE"
-                    },
-                    {
+                     },
+                     {
                         "name": "MFC L8610CDW - W7 x64",
                         "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20MFC%20L8610CDW%20-%20W7%20x64.EXE"
-                    },
-                    {
+                     },
+                     {
                         "name": "MFC-7860DW - W10 x64",
                         "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20MFC-7860DW%20-%20W10%20x64.EXE"
-                    },
-                    {
+                     },
+                     {
                         "name": "MFC-8480DN - W8",
                         "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20MFC-8480DN%20-%20W8.EXE"
-                    },
-                    {
+                     },
+                     {
                         "name": "MFC-8952DW",
                         "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20MFC-8952DW.EXE"
-                    },
-                    {
+                     },
+                     {
                         "name": "MFC-9460CDN - W7x64",
                         "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20MFC-9460CDN%20-%20W7x64.EXE"
-                    },
-                    {
+                     },
+                     {
                         "name": "4500DW",
                         "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHERF%20-%204500DW.EXE"
-                    }
+                     }
                ]
             },
             {
@@ -485,7 +498,7 @@
                      indexImpressora = i
                   }
                }
-             
+               
             for(i = 0; i < printers[indexImpressora].model.length; i++){
                if(printers[indexImpressora].model[i].name == impressoraSelecionada){
                   indexModelo = i
@@ -496,7 +509,6 @@
             
             terminal.Run(result)
          }
-
       </SCRIPT>
 
 
@@ -574,52 +586,50 @@
             text-overflow: ellipsis;
             max-width: 100px;
          }
-
       </STYLE>
-</HEAD>
+   </HEAD>
 
-<BODY>
-   <h4>O que deseja solucionar?</h4>
-   <button class="btn" onclick="executaNetConfig();"Title="Abre a tela de configuração de IP">Config. Rede</button>
-   <button class="btn" onclick="executaVerifyIP();" Title="Executa o testador de rede">Verificar Rede</button>
-   </br>
-   <button class="btn" onclick="executaFasterMe();"Title="Desabilita alguns serviços do Windows e faz uma limpeza dos arquivos temporários do sistema">Lentidão</button>
-   <button class="btn" onclick="executaAnydesk();" Title="Abre o Anydesk">Suporte</button>
-   </br>
-   <button class="btn" onclick="executaLimpaSpool();"Title="Limpa a fila e reinicia serviço de impressão">Não imprime</button>
-   <button class="btn" onclick="executaDefaultPrinter();"Title="Trocar impressora padrão do computador">Imp. Padrão</button>
-
-   <h5>Instalar Impressora</h5>
-   <div class="printersList">
-      <div class="printers marca">
-         <span>Marca:</span>
-         <select name="printersName" id="printersName">
-            <option value="brother">BROTHER</option>
-            <option value="canon">CANON</option>
-            <option value="epson">EPSON</option>
-            <option value="hp">HP</option>
-            <option value="kodak scan">KODAK SCAN</option>
-            <option value="lexmark">LEXMARK</option>
-            <option value="ricoh">RICOH</option>
-            <option value="samsung">SAMSUNG</option>
-            <option value="xerox">XEROX</option>
-         </select>
-         <button onclick="executaListarImpressoras()">Listar</button>
-      </div>
+   <BODY>
+      <h4>O que deseja solucionar?</h4>
+      <button class="btn" onclick="executaNetConfig();"Title="Abre a tela de configuração de IP">Config. Rede</button>
+      <button class="btn" onclick="executaVerifyIP();" Title="Executa o testador de rede">Verificar Rede</button>
       </br>
-      <div class="printers modelo">
-         <span>Modelo:</span>
-         <select name="printersModel" id="printersModel">
-            <option value="">Gerar lista</option>
-         </select>
+      <button class="btn" onclick="executaFasterMe();"Title="Desabilita alguns serviços do Windows e faz uma limpeza dos arquivos temporários do sistema">Lentidão</button>
+      <button class="btn" onclick="executaAnydesk();" Title="Abre o Anydesk">Suporte</button>
+      </br>
+      <button class="btn" onclick="executaLimpaSpool();"Title="Limpa a fila e reinicia serviço de impressão">Não imprime</button>
+      <button class="btn" onclick="executaDefaultPrinter();"Title="Trocar impressora padrão do computador">Imp. Padrão</button>
+
+      <h5>Instalar Impressora</h5>
+      <div class="printersList">
+         <div class="printers marca">
+            <span>Marca:</span>
+            <select name="printersName" id="printersName">
+               <option value="brother">BROTHER</option>
+               <option value="canon">CANON</option>
+               <option value="epson">EPSON</option>
+               <option value="hp">HP</option>
+               <option value="kodak scan">KODAK SCAN</option>
+               <option value="lexmark">LEXMARK</option>
+               <option value="ricoh">RICOH</option>
+               <option value="samsung">SAMSUNG</option>
+               <option value="xerox">XEROX</option>
+            </select>
+            <button onclick="executaListarImpressoras()">Listar</button>
+         </div>
+         </br>
+         <div class="printers modelo">
+            <span>Modelo:</span>
+            <select name="printersModel" id="printersModel">
+               <option value="">Gerar lista</option>
+            </select>
+         </div>
+
+         <button class="btn-large" onclick="executaInstalarImpressora();" Title="Instala impressora selecionada">Instalar
+            impressora</button>
       </div>
 
-      <button class="btn-large" onclick="executaInstalarImpressora();" Title="Instala impressora selecionada">Instalar
-         impressora</button>
-   </div>
-
-
-   <p class="assinatura" id="assinatura" onclick="resize();">by Danilo</p>
-</BODY>
+      <p class="assinatura" id="assinatura" onclick="resize();">by Danilo</p>
+   </BODY>
 
 </HTML>
