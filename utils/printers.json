@@ -1,0 +1,301 @@
+{
+  "printers": [
+    {
+      "name": "BROTHER",
+      "model": [
+        {
+          "name": "BROTHER - ADS-2000 (SCANNER)",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20ADS-2000%20(SCANNER).EXE"
+        },
+        {
+          "name": "BROTHER - ADS-2200-2700W (SCANNER)",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20ADS-2200-2700W%20(SCANNER).EXE"
+        },
+        {
+          "name": "BROTHER - DCP 5652DN - W10x64 - iPrintScan-Setup",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP%205652DN%20-%20W10x64%20-%20iPrintScan-Setup.exe"
+        },
+        {
+          "name": "BROTHER - DCP 5652DN - x64",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP%205652DN%20-%20x64.EXE"
+        },
+        {
+          "name": "BROTHER - DCP 8112DN",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP%208112DN.EXE"
+        },
+        {
+          "name": "BROTHER - DCP 8152DN",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP%208152DN.EXE"
+        },
+        {
+          "name": "BROTHER - DCP - 8157DN",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP%20-%208157DN.EXE"
+        },
+        {
+          "name": "BROTHER - DCP L2520DW",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP%20L2520DW.EXE"
+        },
+        {
+          "name": "BROTHER - DCP L2540DW - x64",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP%20L2540DW%20-%20x64.EXE"
+        },
+        {
+          "name": "BROTHER - DCP-7065DN - W7x64",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP-7065DN%20-%20W7x64.EXE"
+        },
+        {
+          "name": "BROTHER - DCP-7065DN - W10",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP-7065DN%20-%20W10.EXE"
+        },
+        {
+          "name": "BROTHER - DCP-8080DN - W7x64",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP-8080DN%20-%20W7x64.EXE"
+        }
+      ]
+    },
+    {
+      "name": "CANON",
+      "model": [
+        {
+          "name": "Canon 3010 Series",
+          "url": "https://www.cloudpma.net/remote.php/webdav/DRIVERS%20DE%20IMPRESSORAS/CANON/Canon%203010%20Series.exe"
+        }
+      ]
+    },
+    {
+      "name": "EPSON",
+      "model": [
+        {
+          "name": "EPSON - L355 - W7x86",
+          "url": "https://www.cloudpma.net/remote.php/webdav/DRIVERS%20DE%20IMPRESSORAS/EPSON/EPSON%20-%20L355%20-%20W7x86.exe"
+        },
+        {
+          "name": "EPSON - L3150 - W7++",
+          "url": "https://www.cloudpma.net/remote.php/webdav/DRIVERS%20DE%20IMPRESSORAS/EPSON/EPSON%20-%20L3150%20-%20W7%2B%2B.exe"
+        },
+        {
+          "name": "EPSON - L3250 L3251 (ONLINE)",
+          "url": "https://www.cloudpma.net/remote.php/webdav/DRIVERS%20DE%20IMPRESSORAS/EPSON/EPSON%20-%20L3250%20L3251%20(ONLINE).exe"
+        },
+        {
+          "name": "EPSON - L4150 - x64",
+          "url": "https://www.cloudpma.net/remote.php/webdav/DRIVERS%20DE%20IMPRESSORAS/EPSON/EPSON%20-%20L4150%20-%20x64.exe"
+        },
+        {
+          "name": "EPSON - L6161 (OFFLINE)",
+          "url": "https://www.cloudpma.net/remote.php/webdav/DRIVERS%20DE%20IMPRESSORAS/EPSON/EPSON%20-%20L6161%20SCAN%20(OFFLINE).exe"
+        },
+        {
+          "name": "EPSON - L6161 SCAN (OFFLINE)",
+          "url": "https://www.cloudpma.net/remote.php/webdav/DRIVERS%20DE%20IMPRESSORAS/CANON/Canon%203010%20Series.exe"
+        }
+      ]
+    },
+    {
+      "name": "HP",
+      "model": [
+        {
+          "name": "HP - Color LaserJet - PRO MFP M277",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20Color%20LaserJet%20-%20PRO%20MFP%20M277.exe"
+        },
+        {
+          "name": "HP - DesignJet - T120 - Plotter",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20DesignJet%20-%20T120%20-%20Plotter.exe"
+        },
+        {
+          "name": "HP - DesignJet - T650",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20DesignJet%20-%20T650.exe"
+        },
+        {
+          "name": "HP - Deskjet 1000 - 110X - 1313",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20Deskjet%201000%20-%20110X%20-%201313.exe"
+        },
+        {
+          "name": "HP - DeskJet - 2700 SERIES",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20DeskJet%20-%202700%20SERIES%20.exe"
+        },
+        {
+          "name": "HP - Laser MFP 432",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20Laser%20MFP%20432.exe"
+        },
+        {
+          "name": "HP - LaserJet - CP1025",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20CP1025.exe"
+        },
+        {
+          "name": "HP - LaserJet - M1120 MPF",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20M1120%20MPF.exe"
+        },
+        {
+          "name": "HP - LaserJet - M1522 Series - W7 x64",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20M1522%20Series%20-%20W7%20x64.exe"
+        },
+        {
+          "name": "HP - LaserJet - P1005 x32",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20P1005%20x32.exe"
+        },
+        {
+          "name": "HP - LaserJet - P1005 x64",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20P1005%20x64.exe"
+        },
+        {
+          "name": "HP - LaserJet - P1005-P1006-P1500 FULL",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20P1005-P1006-P1500%20FULL.exe"
+        },
+        {
+          "name": "HP - LaserJet - P1100 P1560 P1600 - W10 x64",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20P1100%20P1560%20P1600%20-%20W10%20x64.exe"
+        },
+        {
+          "name": "HP - LaserJet - P2035n x32",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20P2035n%20x32.exe"
+        },
+        {
+          "name": "HP - LaserJet - P2035n x64",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20P2035n%20x64.exe"
+        },
+        {
+          "name": "HP - LaserJet - P3015",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20P3015.exe"
+        },
+        {
+          "name": "HP - Laserjet P1000-1005",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20Laserjet%20P1000-1005.exe"
+        },
+        {
+          "name": "HP - Laserjet Pro - 4003DW",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20Laserjet%20Pro%20-%204003DW.exe"
+        },
+        {
+          "name": "HP - LaserJet Pro - M101-M106 FULL x64",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20Pro%20-%20M101-M106%20FULL%20x64.exe"
+        },
+        {
+          "name": "HP - LaserJet Pro - M402-M403 x64",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20Pro%20-%20M402-M403%20x64.exe"
+        },
+        {
+          "name": "HP - LaserJet Pro - M428FDW",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20Pro%20-%20M428FDW.exe"
+        },
+        {
+          "name": "HP - LaserJet Pro - MFP M127fn",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20Pro%20-%20MFP%20M127fn.exe"
+        },
+        {
+          "name": "HP - M1130-M1210MFP - FullSolution",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20M1130-M1210MFP%20-%20FullSolution.exe"
+        },
+        {
+          "name": "HP - M1130-M1210MFP - FullSolution (2)",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20M1130-M1210MFP%20-%20FullSolution%20(2).exe"
+        },
+        {
+          "name": "HP - Officejet Pro - 8610",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20Officejet%20Pro%20-%208610.exe"
+        },
+        {
+          "name": "HP Color Laserjet MPF M479fdw",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20Color%20Laserjet%20MPF%20M479fdw.exe"
+        },
+        {
+          "name": "HP EasyStart",
+          "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20EasyStart.exe"
+        }
+      ]
+    },
+    {
+      "name": "KODAK SCAN",
+      "model": [
+        {
+          "name": "Kodak - Alaris S2000",
+          "url": [
+            "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FKODAK%20SCAN%2FAlaris&files=1%C2%BA%20-%20ALARIS%20S2000.exe",
+            "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FKODAK%20SCAN%2FAlaris&files=2%C2%BA%20-%20PROGRAMA%20-%20ALARIS%20s2000.exe"
+          ]
+        },
+        {
+          "name": "Kodak - i2600",
+          "url": [
+            "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FKODAK%20SCAN%2Fi2600&files=1%C2%BA%20-%20CD_WINDOWS_i2000_v5.1.iso",
+            "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FKODAK%20SCAN%2Fi2600&files=2%C2%BA%20-%20ST_i2000_1.9.8.1184.200915.exe"
+          ]
+        },
+        {
+          "name": "Kodak - S2060w",
+          "url": [
+            "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FKODAK%20SCAN%2FKodak%20S2060w&files=1%C2%BA%20-%20Kodak%20S2060w.exe",
+            "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FKODAK%20SCAN%2FKodak%20S2060w&files=2%C2%BA%20-%20Kodak%20S2060w.exe"
+          ]
+        },
+        {
+          "name": "Kodak - Scanmate i940",
+          "url": [
+            "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FKODAK%20SCAN%2FScanmate%20i940&files=1%C2%BA%20-%20i900.exe",
+            "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FKODAK%20SCAN%2FScanmate%20i940&files=2%C2%BA%20-%20SCANMATE%20-%20i900.exe"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LEXMARK",
+      "model": [
+        {
+          "name": "LEXMARK - T654DN w10x64",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FLEXMARK&files=LEXMARK%20-%20T654DN%20w10x64.exe"
+        },
+        {
+          "name": "LEXMARK - MX610 Series ADW",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FLEXMARK&files=Lexmark_MX610_Series_ADW_Installation_Package.exe"
+        }
+      ]
+    },
+    {
+      "name": "RICOH",
+      "model": [
+        {
+          "name": "RICOH - 320SN 320SFN 325SNw 325SFNw 377SNwX 377SFNwX",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FRICOH&files=RICOH%20-%20320SN%20320SFN%20325SNw%20325SFNw%20377SNwX%20377SFNwX.exe"
+        },
+        {
+          "name": "RICOH - SP3710SF - W7x32",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FRICOH&files=RICOH%20-%20SP3710SF%20-%20W7x32.exe"
+        }
+      ]
+    },
+    {
+      "name": "SAMSUNG",
+      "model": [
+        {
+          "name": "SAMSUNG - XPRESS M288x SERIES",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FSAMSUNG&files=SAMSUNG%20-%20XPRESS%20M288x%20SERIES.exe"
+        },
+        {
+          "name": "SAMSUNG - XPRESS M288x SERIES - SCAN",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FSAMSUNG&files=SAMSUNG%20-%20XPRESS%20M288x%20SERIES%20-%20SCAN.exe"
+        },
+        {
+          "name": "SAMSUNG - XPRESS M337x 387x 407x SERIES",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FSAMSUNG&files=SAMSUNG%20-%20XPRESS%20M337x%20387x%20407x%20SERIES.exe"
+        },
+        {
+          "name": "SAMSUNG - XPRESS M2070W SERIES",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FSAMSUNG&files=SAMSUNG%20-%20XPRESS%20M2070W%20SERIES.exe"
+        }
+      ]
+    },
+    {
+      "name": "XEROX",
+      "model": [
+        {
+          "name": "Xerox - B205 W10x64",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FXEROX&files=Xerox%20-%20B205%20W10x64.exe"
+        },
+        {
+          "name": "Xerox - B225 Talvez",
+          "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FXEROX&files=Xerox%20-%20B225%20Talvez.exe"
+        }
+      ]
+    }
+  ]
+}

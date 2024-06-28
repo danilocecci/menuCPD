@@ -1,0 +1,569 @@
+<HTML>
+
+<HEAD>
+   <HTA:APPLICATION SCROLL="no" SYSMENU="yes" ICON="utils/janelinha.ico" VERSION="1.0" INNERBORDER="no" BORDER="yes">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <TITLE>MenuCPD</TITLE>
+
+      <SCRIPT type="text/javascript" language="JavaScript">
+         var terminal = new ActiveXObject("WScript.Shell");
+
+         window.resizeTo(257, 260);
+         window.moveTo((screen.width - 257) / 2, (screen.height - 260) / 2);
+
+         var printers = [
+            {
+               "name": "BROTHER",
+               "model": [
+                  {
+                     "name": "ADS 2000 (SCANNER)",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20ADS-2000%20(SCANNER).EXE"
+                  },
+                  {
+                     "name": "ADS 2200-2700W (SCANNER)",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20ADS-2200-2700W%20(SCANNER).EXE"
+                  },
+                  {
+                     "name": "DCP 5652DN - W10x64 - iPrintScan-Setup",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP%205652DN%20-%20W10x64%20-%20iPrintScan-Setup.exe"
+                  },
+                  {
+                     "name": "DCP 5652DN - x64",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP%205652DN%20-%20x64.EXE"
+                  },
+                  {
+                     "name": "DCP 8112DN",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP%208112DN.EXE"
+                  },
+                  {
+                     "name": "DCP 8152DN",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP%208152DN.EXE"
+                  },
+                  {
+                     "name": "DCP 8157DN",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP%20-%208157DN.EXE"
+                  },
+                  {
+                     "name": "DCP L2520DW",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP%20L2520DW.EXE"
+                  },
+                  {
+                     "name": "DCP L2540DW - x64",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP%20L2540DW%20-%20x64.EXE"
+                  },
+                  {
+                     "name": "DCP 7065DN - W7x64",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP-7065DN%20-%20W7x64.EXE"
+                  },
+                  {
+                     "name": "DCP 7065DN - W10",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP-7065DN%20-%20W10.EXE"
+                  },
+                  {
+                     "name": "DCP 8080DN - W7x64",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FBROTHER&files=BROTHER%20-%20DCP-8080DN%20-%20W7x64.EXE"
+                  }
+               ]
+            },
+            {
+               "name": "CANON",
+               "model": [
+                  {
+                     "name": "3010 Series",
+                     "url": "https://www.cloudpma.net/remote.php/webdav/DRIVERS%20DE%20IMPRESSORAS/CANON/Canon%203010%20Series.exe"
+                  }
+               ]
+            },
+            {
+               "name": "EPSON",
+               "model": [
+                  {
+                     "name": "L355 - W7x86",
+                     "url": "https://www.cloudpma.net/remote.php/webdav/DRIVERS%20DE%20IMPRESSORAS/EPSON/EPSON%20-%20L355%20-%20W7x86.exe"
+                  },
+                  {
+                     "name": "L3150 - W7++",
+                     "url": "https://www.cloudpma.net/remote.php/webdav/DRIVERS%20DE%20IMPRESSORAS/EPSON/EPSON%20-%20L3150%20-%20W7%2B%2B.exe"
+                  },
+                  {
+                     "name": "L3250 L3251 (ONLINE)",
+                     "url": "https://www.cloudpma.net/remote.php/webdav/DRIVERS%20DE%20IMPRESSORAS/EPSON/EPSON%20-%20L3250%20L3251%20(ONLINE).exe"
+                  },
+                  {
+                     "name": "L4150 - x64",
+                     "url": "https://www.cloudpma.net/remote.php/webdav/DRIVERS%20DE%20IMPRESSORAS/EPSON/EPSON%20-%20L4150%20-%20x64.exe"
+                  },
+                  {
+                     "name": "L6161 (OFFLINE)",
+                     "url": "https://www.cloudpma.net/remote.php/webdav/DRIVERS%20DE%20IMPRESSORAS/EPSON/EPSON%20-%20L6161%20SCAN%20(OFFLINE).exe"
+                  },
+                  {
+                     "name": "L6161 SCAN (OFFLINE)",
+                     "url": "https://www.cloudpma.net/remote.php/webdav/DRIVERS%20DE%20IMPRESSORAS/CANON/Canon%203010%20Series.exe"
+                  }
+               ]
+            },
+            {
+               "name": "HP",
+               "model": [
+                  {
+                     "name": "Color LaserJet - PRO MFP M277",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20Color%20LaserJet%20-%20PRO%20MFP%20M277.exe"
+                  },
+                  {
+                     "name": "DesignJet - T120 - Plotter",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20DesignJet%20-%20T120%20-%20Plotter.exe"
+                  },
+                  {
+                     "name": "DesignJet - T650",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20DesignJet%20-%20T650.exe"
+                  },
+                  {
+                     "name": "Deskjet 1000 - 110X - 1313",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20Deskjet%201000%20-%20110X%20-%201313.exe"
+                  },
+                  {
+                     "name": "DeskJet - 2700 SERIES",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20DeskJet%20-%202700%20SERIES%20.exe"
+                  },
+                  {
+                     "name": "Laser MFP 432",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20Laser%20MFP%20432.exe"
+                  },
+                  {
+                     "name": "LaserJet - CP1025",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20CP1025.exe"
+                  },
+                  {
+                     "name": "LaserJet - M1120 MPF",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20M1120%20MPF.exe"
+                  },
+                  {
+                     "name": "LaserJet - M1522 Series - W7 x64",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20M1522%20Series%20-%20W7%20x64.exe"
+                  },
+                  {
+                     "name": "LaserJet - P1005 x32",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20P1005%20x32.exe"
+                  },
+                  {
+                     "name": "LaserJet - P1005 x64",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20P1005%20x64.exe"
+                  },
+                  {
+                     "name": "LaserJet - P1005-P1006-P1500 FULL",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20P1005-P1006-P1500%20FULL.exe"
+                  },
+                  {
+                     "name": "LaserJet - P1100 P1560 P1600 - W10 x64",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20P1100%20P1560%20P1600%20-%20W10%20x64.exe"
+                  },
+                  {
+                     "name": "LaserJet - P2035n x32",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20P2035n%20x32.exe"
+                  },
+                  {
+                     "name": "LaserJet - P2035n x64",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20P2035n%20x64.exe"
+                  },
+                  {
+                     "name": "LaserJet - P3015",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20-%20P3015.exe"
+                  },
+                  {
+                     "name": "Laserjet P1000-1005",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20Laserjet%20P1000-1005.exe"
+                  },
+                  {
+                     "name": "Laserjet Pro - 4003DW",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20Laserjet%20Pro%20-%204003DW.exe"
+                  },
+                  {
+                     "name": "LaserJet Pro - M101-M106 FULL x64",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20Pro%20-%20M101-M106%20FULL%20x64.exe"
+                  },
+                  {
+                     "name": "LaserJet Pro - M402-M403 x64",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20Pro%20-%20M402-M403%20x64.exe"
+                  },
+                  {
+                     "name": "LaserJet Pro - M428FDW",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20Pro%20-%20M428FDW.exe"
+                  },
+                  {
+                     "name": "LaserJet Pro - MFP M127fn",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20LaserJet%20Pro%20-%20MFP%20M127fn.exe"
+                  },
+                  {
+                     "name": "M1130-M1210MFP - FullSolution",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20M1130-M1210MFP%20-%20FullSolution.exe"
+                  },
+                  {
+                     "name": "M1130-M1210MFP - FullSolution (2)",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20M1130-M1210MFP%20-%20FullSolution%20(2).exe"
+                  },
+                  {
+                     "name": "Officejet Pro - 8610",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20-%20Officejet%20Pro%20-%208610.exe"
+                  },
+                  {
+                     "name": "Color Laserjet MPF M479fdw",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20Color%20Laserjet%20MPF%20M479fdw.exe"
+                  },
+                  {
+                     "name": "EasyStart",
+                     "url": "https:/www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FHP&files=HP%20EasyStart.exe"
+                  }
+               ]
+            },
+            {
+               "name": "KODAK SCAN",
+               "model": [
+                  {
+                     "name": "Alaris S2000",
+                     "url": [
+                        "https://www.cloudpma.net/index.php/s/csRnxRTriM3LZD7/download"
+                     ]
+                  },
+                  {
+                     "name": "i2600",
+                     "url": [
+                        "https://www.cloudpma.net/index.php/s/nEkErPBEtHNWXY9/download"
+                     ]
+                  },
+                  {
+                     "name": "S2060w",
+                     "url": [
+                        "https://www.cloudpma.net/index.php/s/kqzEH5KHA5eYaKW/download"
+                     ]
+                  },
+                  {
+                     "name": "Scanmate i940",
+                     "url": [
+                        "https://www.cloudpma.net/index.php/s/atwcd9D9x3C79nM/download"
+                     ]
+                  }
+               ]
+            },
+            {
+               "name": "LEXMARK",
+               "model": [
+                  {
+                     "name": "T654DN w10x64",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FLEXMARK&files=LEXMARK%20-%20T654DN%20w10x64.exe"
+                  },
+                  {
+                     "name": "MX610 Series ADW",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FLEXMARK&files=Lexmark_MX610_Series_ADW_Installation_Package.exe"
+                  }
+               ]
+            },
+            {
+               "name": "RICOH",
+               "model": [
+                  {
+                     "name": "320SN 320SFN 325SNw 325SFNw 377SNwX 377SFNwX",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FRICOH&files=RICOH%20-%20320SN%20320SFN%20325SNw%20325SFNw%20377SNwX%20377SFNwX.exe"
+                  },
+                  {
+                     "name": "SP3710SF - W7x32",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FRICOH&files=RICOH%20-%20SP3710SF%20-%20W7x32.exe"
+                  }
+               ]
+            },
+            {
+               "name": "SAMSUNG",
+               "model": [
+                  {
+                     "name": "XPRESS M288x SERIES",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FSAMSUNG&files=SAMSUNG%20-%20XPRESS%20M288x%20SERIES.exe"
+                  },
+                  {
+                     "name": "XPRESS M288x SERIES - SCAN",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FSAMSUNG&files=SAMSUNG%20-%20XPRESS%20M288x%20SERIES%20-%20SCAN.exe"
+                  },
+                  {
+                     "name": "XPRESS M337x 387x 407x SERIES",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FSAMSUNG&files=SAMSUNG%20-%20XPRESS%20M337x%20387x%20407x%20SERIES.exe"
+                  },
+                  {
+                     "name": "XPRESS M2070W SERIES",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FSAMSUNG&files=SAMSUNG%20-%20XPRESS%20M2070W%20SERIES.exe"
+                  }
+               ]
+            },
+            {
+               "name": "XEROX",
+               "model": [
+                  {
+                     "name": "B205 W10x64",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FXEROX&files=Xerox%20-%20B205%20W10x64.exe"
+                  },
+                  {
+                     "name": "B225 Talvez",
+                     "url": "https://www.cloudpma.net/index.php/s/2ZmD9d8nRxw6TsN/download?path=%2FXEROX&files=Xerox%20-%20B225%20Talvez.exe"
+                  }
+               ]
+            }
+         ]
+
+         function executaAnydesk() {
+            terminal.Run(".\\utils\\AnyDesk.exe")
+         }
+
+         function executaNetConfig() {
+            terminal.Run(".\\bats\\netConfig.bat");
+         }
+
+         function executaFasterMe() {
+            terminal.Run(".\\bats\\fasterMe.bat");
+         }
+
+         function executaLimpaSpool() {
+            terminal.Run(".\\bats\\limpaSpool.bat");
+         }
+
+         function executaVerifyIP() {
+            terminal.Run(".\\bats\\verifyIP.bat")
+         }
+
+         function executaDefaultPrinter() {
+            terminal.Run(".\\bats\\defaultPrinter.bat")
+         }
+
+         function resize() {
+            var assinatura = document.getElementById('assinatura');
+
+            if (assinatura.classList == 'assinatura printers') {
+               window.resizeTo(257, 260);
+               assinatura.style.top = '208px';
+               window.moveTo((screen.width - 257) / 2, (screen.height - 260) / 2);
+               assinatura.classList = 'assinatura'
+            } else {
+               window.resizeTo(257, 430);
+               window.moveTo((screen.width - 257) / 2, (screen.height - 430) / 2);
+               assinatura.style.top = '376px';
+               assinatura.classList = 'assinatura printers'
+            }
+         }
+
+         var marcaImpressora = document.getElementById('printersName')
+         // marcaImpressora.change(function(){ alert('teste') })
+
+         function executaListarImpressoras() {
+            var marcaSelecionada = document.getElementById('printersName').value;
+            var modelosImpressoras = document.getElementById('printersModel');
+
+            function getModels(){
+                  modelosImpressoras.innerHTML = ""
+
+                  for(i = 0; i < modelos.length; i++) {
+                     var option = document.createElement("option")
+                     option.value = modelos[i].name;
+                     option.text = modelos[i].name;
+                     modelosImpressoras.add(option);
+                  }
+            }
+
+            switch (marcaSelecionada) {
+               case 'brother':
+                  var modelos = printers[0].model;
+                  getModels();
+               break;
+
+               case 'canon':
+                  var modelos = printers[1].model;
+                  getModels();
+               break;
+
+               case 'epson':
+                  var modelos = printers[2].model
+                  getModels();
+               break;
+
+               case 'hp':
+                  var modelos = printers[3].model
+                  getModels();
+               break;
+
+               case 'kodak scan':
+                  var modelos = printers[4].model
+                  getModels();
+               break;
+
+               case 'lexmark':
+                  var modelos = printers[5].model
+                  getModels();
+               break;
+
+               case 'ricoh':
+                  var modelos = printers[6].model
+                  getModels();
+               break;
+
+               case 'samsung':
+                  var modelos = printers[7].model
+                  getModels();
+               break;
+
+               case 'xerox':
+                  var modelos = printers[8].model
+                  getModels();
+               break;
+            }
+         }
+
+         function executaInstalarImpressora() {
+            var impressoraSelecionada = document.getElementById('printersModel').value;
+            var marcaImpressoraSelecionada = document.getElementById('printersName').value
+            if(!impressoraSelecionada){
+               alert("Selecione uma impressora")
+               return
+            }
+
+            var indexImpressora;
+            var indexModelo;
+
+            for(i = 0; i < printers.length; i++){
+                  if(printers[i].name.toLocaleLowerCase() == marcaImpressoraSelecionada){
+                     indexImpressora = i
+                  }
+               }
+             
+            for(i = 0; i < printers[indexImpressora].model.length; i++){
+               if(printers[indexImpressora].model[i].name == impressoraSelecionada){
+                  indexModelo = i
+               }
+            }
+
+            var result = printers[indexImpressora].model[indexModelo].url
+            
+            terminal.Run(result)
+         }
+
+      </SCRIPT>
+
+
+      <STYLE type="text/css">
+         body {
+            font-family: Georgia;
+            justify-content: space-between;
+            display: flex;
+            font-size: 14px;
+         }
+
+         h4 {
+            text-align: center;
+         }
+
+         .btn {
+            margin: 1px 5px 0px 5px;
+            padding: 8px;
+            border: 1px solid #808080;
+            width: 100px;
+            cursor: pointer;
+         }
+
+         .instaladores {
+            display: flex;
+            text-align: center;
+         }
+
+         .btn-install {
+            margin-left: 8px;
+            padding: 1px 4px;
+            cursor: pointer;
+            border: 1px solid #808080;
+         }
+
+         .assinatura {
+            position: absolute;
+            font-size: 10px;
+            top: 208px;
+            right: 5px;
+            cursor: pointer;
+         }
+
+         .btn-large {
+            width: 100%;
+            padding: 8px;
+            margin: 1px 5px 0px 5px;
+            border: 1px solid #808080;
+            cursor: pointer;
+         }
+
+         h5 {
+            text-align: center;
+         }
+
+         .printersList {
+            display: flex;
+            align-items: center;
+         }
+
+         .marca {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+         }
+
+         .modelo {
+            margin-bottom: 8px;
+         }
+
+         #printersModel{
+            width: 74%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100px;
+         }
+
+      </STYLE>
+</HEAD>
+
+<BODY>
+   <h4>O que deseja solucionar?</h4>
+   <button class="btn" onclick="executaNetConfig();"Title="Abre a tela de configuração de IP">Config. Rede</button>
+   <button class="btn" onclick="executaVerifyIP();" Title="Executa o testador de rede">Verificar Rede</button>
+   </br>
+   <button class="btn" onclick="executaFasterMe();"Title="Desabilita alguns serviços do Windows e faz uma limpeza dos arquivos temporários do sistema">Lentidão</button>
+   <button class="btn" onclick="executaAnydesk();" Title="Abre o Anydesk">Suporte</button>
+   </br>
+   <button class="btn" onclick="executaLimpaSpool();"Title="Limpa a fila e reinicia serviço de impressão">Não imprime</button>
+   <button class="btn" onclick="executaDefaultPrinter();"Title="Trocar impressora padrão do computador">Imp. Padrão</button>
+
+   <h5>Instalar Impressora</h5>
+   <div class="printersList">
+      <div class="printers marca">
+         <span>Marca:</span>
+         <select name="printersName" id="printersName">
+            <option value="brother">BROTHER</option>
+            <option value="canon">CANON</option>
+            <option value="epson">EPSON</option>
+            <option value="hp">HP</option>
+            <option value="kodak scan">KODAK SCAN</option>
+            <option value="lexmark">LEXMARK</option>
+            <option value="ricoh">RICOH</option>
+            <option value="samsung">SAMSUNG</option>
+            <option value="xerox">XEROX</option>
+         </select>
+         <button onclick="executaListarImpressoras()">Listar</button>
+      </div>
+      </br>
+      <div class="printers modelo">
+         <span>Modelo:</span>
+         <select name="printersModel" id="printersModel">
+            <option value="">Gerar lista</option>
+         </select>
+      </div>
+
+      <button class="btn-large" onclick="executaInstalarImpressora();" Title="Instala impressora selecionada">Instalar
+         impressora</button>
+   </div>
+
+
+   <p class="assinatura" id="assinatura" onclick="resize();">by Danilo</p>
+</BODY>
+
+</HTML>
