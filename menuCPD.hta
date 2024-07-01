@@ -421,7 +421,7 @@
          }
          
          function checkUpdate(){
-            var localVersion = document.getElementById('assinatura').innerText.replace('v','');
+            var localVersion = document.getElementById('assinatura').innerText.replace('v','').trim();
             var currentVersion;
             var xmlhttp=new XMLHttpRequest();
 
@@ -429,14 +429,14 @@
                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
                      var response = xmlhttp.responseText;
                      var partOfResponse = response.split('VERSION=')[1]
-                     currentVersion = partOfResponse.split(' ')[0].replace("\"", "").replace("\"", "")
+                     currentVersion = partOfResponse.split(' ')[0].replace("\"", "").replace("\"", "").trim();
                      
                      if(localVersion != currentVersion){
                         var confirma = confirm('Há uma versão mais atualizada. Deseja instalar?')
                         if(confirma) {
-                           terminal.Run("echo 'Atualizando menuCPD...' && winget install wget & pause && wget https://github.com/danilocecci/menuCPD/archive/refs/heads/main.zip -O %userprofile%\Downloads\menuCPD.zip && 'C:\Program Files\WinRAR\WinRAR.exe' x %userprofile%\Downloads\menuCPD.zip && taskkill /f /im mshta.exe && xcopy '%userprofile%\Downloads\menuCPD-main\' '%userprofile%\Documents\MenuCPD\' /e /y && start %userprofile%\Documents\MenuCPD\menuCPD.hta")
+                           terminal.Run(".\\bats\\updateMenuCPD.bat")
                         } else {
-                           alert('OK')
+                           alert('Update cancelado!')
                         }
                      } else {
                         alert("Você já está na versão mais atual!")
