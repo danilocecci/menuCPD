@@ -1,28 +1,28 @@
 <HTML>
-
    <HEAD>
+      <TITLE>MenuCPD</TITLE>
+
       <HTA:APPLICATION 
          SCROLL="no" 
          SYSMENU="yes" 
          ICON="utils/janelinha.ico"
          VERSION="3.0"
          INNERBORDER="no"
-         APPLICATIONNAME="CPDTools"
-         BORDER="thin"
-         CONTEXTMENU="no"
+         APPLICATIONNAME="menuCPD"
+         BORDER=""
+         CONTEXTMENU="yes"
          MAXIMIZEBUTTON="no"
          SINGLEINSTANCE="yes"
          CAPTION="yes"
          SELECTION="no"
       />
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <TITLE>MenuCPD</TITLE>
+      <meta charset="UTF-8" http-equiv="X-UA-Compatible" content="IE=9">
 
       <SCRIPT type="text/javascript" language="JavaScript">
          var terminal = new ActiveXObject("WScript.Shell");
 
-         window.resizeTo(257, 260);
-         window.moveTo((screen.width - 257) / 2, (screen.height - 260) / 2);
+         window.resizeTo(320, 260);
+         window.moveTo((screen.width - 320) / 2, (screen.height - 260) / 2); 
 
          var printers = [
             {
@@ -402,17 +402,20 @@
 
          function resize() {
             var assinatura = document.getElementById('assinatura');
+            var setinha = document.getElementById('setinha');
 
             if (assinatura.classList == 'assinatura printers') {
-               window.resizeTo(257, 260);
+               window.resizeTo(320, 260);
                assinatura.style.top = '208px';
-               window.moveTo((screen.width - 257) / 2, (screen.height - 260) / 2);
+               window.moveTo((screen.width - 320) / 2, (screen.height - 260) / 2);
                assinatura.classList = 'assinatura'
+               setinha.innerText = '↓'
             } else {
-               window.resizeTo(257, 430);
-               window.moveTo((screen.width - 257) / 2, (screen.height - 430) / 2);
-               assinatura.style.top = '376px';
+               window.resizeTo(320, 410);
+               window.moveTo((screen.width - 320) / 2, (screen.height - 410) / 2);
+               assinatura.style.top = '356px';
                assinatura.classList = 'assinatura printers'
+               setinha.innerText = '↑'
             }
          }
 
@@ -513,55 +516,88 @@
 
 
       <STYLE type="text/css">
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+         }
+
          body {
-            font-family: Georgia;
-            justify-content: space-between;
             display: flex;
-            font-size: 14px;
+            justify-content: center;
+            align-items: center;
+
+            margin: 0px auto 2px;
+            text-align: center;
          }
 
          h4 {
-            text-align: center;
+            margin: 10px auto 10px;
+         }
+
+         .main-btns {
+            margin: 15px auto;
+         }
+
+         .btn, .btn-install, .btn-special, .btn-large, select {
+            border-radius: 8px;
+            border: none;
+            background: #f8f8f8;
+            cursor: pointer;
+            transition: 0.3s;
+         }
+
+         .btn:hover, .btn-install:hover, .btn-special:hover, .btn-large:hover, .btn:focus, .btn-install:focus, .btn-special:focus, .btn-large:focus {
+            outline: none;
+            background: #c9c8c8;
+         }
+
+         .btn-large {
+            padding: 8px;
          }
 
          .btn {
-            margin: 1px 5px 0px 5px;
+            margin: 5px 5px 0px 5px ;
             padding: 8px;
-            border: 1px solid #808080;
-            width: 100px;
-            cursor: pointer;
+            width: 120px;
          }
 
-         .instaladores {
-            display: flex;
-            text-align: center;
+         .btn-special {
+            margin: 12px 5px 0px 5px ;
+            padding: 8px;
+            width: 160px;
+            height: 40px;
          }
 
          .btn-install {
             margin-left: 8px;
-            padding: 1px 4px;
-            cursor: pointer;
-            border: 1px solid #808080;
+            padding: 8px 10px;
          }
 
-         .assinatura {
+         #assinatura {
             position: absolute;
-            font-size: 10px;
+            font-size: 11px;
             top: 208px;
             right: 5px;
-            cursor: pointer;
          }
 
-         .btn-large {
-            width: 100%;
-            padding: 8px;
-            margin: 1px 5px 0px 5px;
-            border: 1px solid #808080;
-            cursor: pointer;
+         #setinha {
+            position: absolute;
+            font-size: 11px;
+            top: 202px;
+            right: 148px;
+
+            cursor:pointer;
          }
 
          h5 {
+            margin-top: 25px;
+            width: fit-content;
             text-align: center;
+            margin-bottom: 4px;
+            padding: 4px;
+            text-transform: uppercase;
          }
 
          .printersList {
@@ -580,25 +616,39 @@
             margin-bottom: 8px;
          }
 
+         #printersName {
+            width: 100%;
+            max-width: 120px;
+         }
+
          #printersModel{
             width: 74%;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 100px;
+            max-width: 125px;
+         }
+
+         .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
          }
       </STYLE>
    </HEAD>
 
    <BODY>
       <h4>O que deseja solucionar?</h4>
-      <button class="btn" onclick="executaNetConfig();"Title="Abre a tela de configuração de IP">Config. Rede</button>
-      <button class="btn" onclick="executaVerifyIP();" Title="Executa o testador de rede">Verificar Rede</button>
-      </br>
-      <button class="btn" onclick="executaFasterMe();"Title="Desabilita alguns serviços do Windows e faz uma limpeza dos arquivos temporários do sistema">Lentidão</button>
-      <button class="btn" onclick="executaAnydesk();" Title="Abre o Anydesk">Suporte</button>
-      </br>
-      <button class="btn" onclick="executaLimpaSpool();"Title="Limpa a fila e reinicia serviço de impressão">Não imprime</button>
-      <button class="btn" onclick="executaDefaultPrinter();"Title="Trocar impressora padrão do computador">Imp. Padrão</button>
+      <div class="main-btns">
+         <button class="btn" onclick="executaNetConfig();"Title="Abre a tela de configuração de IP">Configurar Rede</button>
+         <button class="btn" onclick="executaVerifyIP();" Title="Executa o testador de rede">Verificar Rede</button>
+         <br\>
+         <button class="btn" onclick="executaLimpaSpool();"Title="Limpa a fila e reinicia serviço de impressão">Problemas de Impressão</button>
+         <button class="btn" onclick="executaDefaultPrinter();"Title="Trocar impressora padrão do computador">Impressora Padrão</button>
+         <br\>
+         <button class="btn" onclick="executaFasterMe();"Title="Desabilita alguns serviços do Windows e faz uma limpeza dos arquivos temporários do sistema">Lentidão do Windows</button>
+         <button class="btn" onclick="executaAnydesk();" Title="Abre o Anydesk">Suporte (AnyDesk)</button>
+         <br\>
+      </div>
 
       <h5>Instalar Impressora</h5>
       <div class="printersList">
@@ -615,7 +665,7 @@
                <option value="samsung">SAMSUNG</option>
                <option value="xerox">XEROX</option>
             </select>
-            <button onclick="executaListarImpressoras()">Listar</button>
+            <button class="btn-install" onclick="executaListarImpressoras()">Listar</button>
          </div>
          </br>
          <div class="printers modelo">
@@ -629,7 +679,8 @@
             impressora</button>
       </div>
 
-      <p class="assinatura" id="assinatura" onclick="resize();">by Danilo</p>
+      <p class="assinatura" id="setinha" onclick="resize();">↓</p>
+      <p class="assinatura" id="assinatura">v2.0</p>
    </BODY>
 
 </HTML>

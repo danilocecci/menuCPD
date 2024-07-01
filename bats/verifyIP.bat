@@ -6,6 +6,16 @@ mode 65,25
 echo [101;93m Teste de conexão [0m
 echo.
 
+echo | set /p="IP Público: " 
+curl http://ifconfig.me/ip
+echo.
+
+echo | set /p="IP Local: "
+for /f "tokens=2,3 delims={,}" %%a in ('"WMIC NICConfig where IPEnabled="True" get IPAddress /value | find "I""') do echo %%~a
+echo.
+
+timeout 1 >nul
+
 for /f "tokens=2,3 delims={,}" %%a in ('"WMIC NICConfig where IPEnabled="True" get DefaultIPGateway /value | find "I" "') do set gateway=%%~a
 
 if %gateway% equ 192.168.0.1 (set server=192.168.0.2) else (set server=192.168.1.5)
