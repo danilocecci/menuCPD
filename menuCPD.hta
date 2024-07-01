@@ -6,7 +6,7 @@
          SCROLL="no" 
          SYSMENU="yes" 
          ICON="utils/janelinha.ico"
-         VERSION="3.0"
+         VERSION="2.0"
          INNERBORDER="no"
          APPLICATIONNAME="menuCPD"
          BORDER=""
@@ -17,9 +17,10 @@
          SELECTION="no"
       />
       <meta charset="UTF-8" http-equiv="X-UA-Compatible" content="IE=9">
-
+       
       <SCRIPT type="text/javascript" language="JavaScript">
          var terminal = new ActiveXObject("WScript.Shell");
+         
 
          window.resizeTo(320, 260);
          window.moveTo((screen.width - 320) / 2, (screen.height - 260) / 2); 
@@ -418,6 +419,34 @@
                setinha.innerText = '↑'
             }
          }
+         
+         function checkUpdate(){
+            var localVersion = document.getElementById('assinatura').innerText.replace('v','');
+            var currentVersion;
+            var xmlhttp=new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange=function() {
+               if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                     var response = xmlhttp.responseText;
+                     var partOfResponse = response.split('VERSION=')[1]
+                     currentVersion = partOfResponse.split(' ')[0].replace("\"", "").replace("\"", "")
+                     
+                     if(localVersion != currentVersion){
+                        var confirma = confirm('Há uma versão mais atualizada. Deseja instalar?')
+                        if(confirma) {
+                           terminal.Run("echo 'Atualizando menuCPD...' && winget install wget & pause && wget https://github.com/danilocecci/menuCPD/archive/refs/heads/main.zip -O %userprofile%\Downloads\menuCPD.zip && 'C:\Program Files\WinRAR\WinRAR.exe' x %userprofile%\Downloads\menuCPD.zip && taskkill /f /im mshta.exe && xcopy '%userprofile%\Downloads\menuCPD-main\' '%userprofile%\Documents\MenuCPD\' /e /y && start %userprofile%\Documents\MenuCPD\menuCPD.hta")
+                        } else {
+                           alert('OK')
+                        }
+                     } else {
+                        alert("Você já está na versão mais atual!")
+                     }
+               }
+            }
+            xmlhttp.open("GET", "https://raw.githubusercontent.com/danilocecci/menuCPD/main/menuCPD.hta", false );
+            xmlhttp.send();  
+
+         }
 
          var marcaImpressora = document.getElementById('printersName')
          // marcaImpressora.change(function(){ alert('teste') })
@@ -580,6 +609,8 @@
             font-size: 11px;
             top: 208px;
             right: 5px;
+
+            cursor:pointer;
          }
 
          #setinha {
@@ -680,7 +711,7 @@
       </div>
 
       <p class="assinatura" id="setinha" onclick="resize();">↓</p>
-      <p class="assinatura" id="assinatura">v2.0</p>
+      <p class="assinatura" id="assinatura" onclick="checkUpdate();">v2.0</p>
    </BODY>
 
 </HTML>
