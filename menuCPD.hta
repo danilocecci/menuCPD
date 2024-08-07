@@ -6,7 +6,7 @@
          SCROLL="no" 
          SYSMENU="yes" 
          ICON="utils/janelinha.ico"
-         VERSION="2.0"
+         VERSION="2.1"
          INNERBORDER="no"
          APPLICATIONNAME="menuCPD"
          BORDER=""
@@ -20,6 +20,11 @@
        
       <SCRIPT type="text/javascript" language="JavaScript">
          var terminal = new ActiveXObject("WScript.Shell");
+
+         
+         window.addEventListener("load",function(){
+            document.getElementById("anydesk").focus()
+         },false);
          
 
          window.resizeTo(320, 260);
@@ -401,20 +406,35 @@
             terminal.Run(".\\bats\\defaultPrinter.bat")
          }
 
+         function executaInstallNovoServ() {
+            terminal.Run(".\\bats\\installNovoServ.bat")
+         }
+
+         function executaAberturaNovoServ() {
+            terminal.Run(".\\bats\\fixOpenNovoServ.bat")
+         }
+
+         function executaDocumentosNovoServ() {
+            terminal.Run(".\\bats\\fixDocsNovoServ.bat")
+         }
+
          function resize() {
             var assinatura = document.getElementById('assinatura');
             var setinha = document.getElementById('setinha');
+            var link = document.getElementById('intra')
 
             if (assinatura.classList == 'assinatura printers') {
                window.resizeTo(320, 260);
                assinatura.style.top = '208px';
+               link.style.top = '208px'
                window.moveTo((screen.width - 320) / 2, (screen.height - 260) / 2);
                assinatura.classList = 'assinatura'
                setinha.innerText = '↓'
             } else {
-               window.resizeTo(320, 410);
-               window.moveTo((screen.width - 320) / 2, (screen.height - 410) / 2);
-               assinatura.style.top = '356px';
+               window.resizeTo(320, 538);
+               window.moveTo((screen.width - 320) / 2, (screen.height - 538) / 2);
+               assinatura.style.top = '484px';
+               link.style.top = '484px'
                assinatura.classList = 'assinatura printers'
                setinha.innerText = '↑'
             }
@@ -541,6 +561,11 @@
             
             terminal.Run(result)
          }
+
+         function openIntraURL() {
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.run("Chrome https://www.intrapma.net");
+         }  
       </SCRIPT>
 
 
@@ -629,6 +654,7 @@
             margin-bottom: 4px;
             padding: 4px;
             text-transform: uppercase;
+            /* text-decoration: underline; */
          }
 
          .printersList {
@@ -647,9 +673,10 @@
             margin-bottom: 8px;
          }
 
-         #printersName {
+         select {
             width: 100%;
             max-width: 120px;
+            padding: 5px;
          }
 
          #printersModel{
@@ -664,6 +691,17 @@
             flex-direction: column;
             align-items: center;
          }
+
+         a.assinatura {
+            position: absolute;
+            font-size: 11px;
+            top: 208px;
+            left: 5px;
+
+            cursor:pointer;
+
+            text-decoration: none;
+         }
       </STYLE>
    </HEAD>
 
@@ -677,8 +715,16 @@
          <button class="btn" onclick="executaDefaultPrinter();"Title="Trocar impressora padrão do computador">Impressora Padrão</button>
          <br\>
          <button class="btn" onclick="executaFasterMe();"Title="Desabilita alguns serviços do Windows e faz uma limpeza dos arquivos temporários do sistema">Lentidão do Windows</button>
-         <button class="btn" onclick="executaAnydesk();" Title="Abre o Anydesk">Suporte (AnyDesk)</button>
+         <button class="btn" id="anydesk" onclick="executaAnydesk();" Title="Abre o Anydesk">Suporte (AnyDesk)</button>
          <br\>
+      </div>
+
+      <h5>Arrumar NovoServ</h5>
+      <div>
+         <button class="btn-large" onclick="executaInstallNovoServ();" Title="Baixa a versão 0208 da Cloudpma, extrai e executa o instalador do NovoServ">Baixar e executar instalador</button>
+         <br/>
+         <button class="btn" onclick="executaAberturaNovoServ();" Title="Organiza os parâmetros, roda o RegComp e abre o Gerenciador de parâmetros">Não abre</button>
+         <button class="btn" onclick="executaDocumentosNovoServ();" Title="Verifica/Instala CrystalQRCode e SoapToolkit">Não gera Doc.</button>
       </div>
 
       <h5>Instalar Impressora</h5>
@@ -711,7 +757,8 @@
       </div>
 
       <p class="assinatura" id="setinha" onclick="resize();">↓</p>
-      <p class="assinatura" id="assinatura" onclick="checkUpdate();">v2.0</p>
+      <p class="assinatura" id="assinatura" onclick="checkUpdate();">v2.1</p>
+      <a href="#" onclick="openIntraURL()" class="assinatura" id="intra">intrapma.net</a>
    </BODY>
 
 </HTML>
