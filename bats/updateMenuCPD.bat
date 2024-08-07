@@ -1,8 +1,8 @@
 @echo off
-CHCP 1252 >NUL
+CHCP 65001 >NUL
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: Começo do processo de adquirir privilégios de Administrador
+:: Comeï¿½o do processo de adquirir privilï¿½gios de Administrador
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ECHO.
@@ -24,7 +24,7 @@ if '%errorlevel%' == '0' ( goto gotPrivileges ) else ( goto getPrivileges )
 if '%1'=='ELEV' (echo ELEV & shift /1 & goto gotPrivileges)
 ECHO.
 ECHO *****************************************************
-ECHO Verificando e adquirindo permissões de Administrador
+ECHO Verificando e adquirindo permissï¿½es de Administrador
 ECHO *****************************************************
 
 ECHO Set UAC = CreateObject^("Shell.Application"^) > "%vbsGetPrivileges%"
@@ -57,36 +57,38 @@ if '%1'=='ELEV' (del "%vbsGetPrivileges%" 1>nul 2>nul  &  shift /1)
 
 title Update menuCPD
 
-echo 'Atualizando menuCPD...' 
+echo Iniciando a atualizaÃ§Ã£o do menuCPD
 cd %userprofile%\Downloads
 echo.
 
-echo 'Baixando a nova versão...' 
-curl -LJO https://github.com/danilocecci/menuCPD/archive/refs/heads/main.zip >nul
+echo Baixando a nova versÃ£o... 
+curl -LJO https://github.com/danilocecci/menuCPD/archive/refs/heads/main.zip >nul &
 echo.
 
-echo 'Extraindo arquivo...'
+timeout 2 >nul
+
+echo Extraindo arquivo...
 "C:\Program Files\WinRAR\WinRAR.exe" x %userprofile%\Downloads\menuCPD-main.zip 
 echo.
 
-echo 'Fechando menuCPD...'
+echo Fechando menuCPD...
 taskkill /f /im mshta.exe 
 echo.
 
 timeout 2 >nul
 
-echo 'Copiando nova versão...'
+echo Copiando nova versÃ£o...
 xcopy "%userprofile%\Downloads\menuCPD-main\" "%userprofile%\Documents\MenuCPD\" /e /y
 echo.
 
-timeout 1 >nul
+timeout 2 >nul
 
-echo "Iniciando menuCPD..."
+echo Iniciando menuCPD...
 start %userprofile%\Documents\MenuCPD\menuCPD.hta
 echo.
 
-echo "Apagando arquivos baixados..."
-del "%useprofile%\Downloads\menuCPD-main\"
-del "%useprofile%\Downloads\menuCPD-main.zip"
+echo Apagando arquivos baixados...
+rmdir /s /q "%userprofile%\Downloads\menuCPD-main\"
+del "%userprofile%\Downloads\menuCPD-main.zip"
 
 echo 'Obrigado por utilizar mais uma ferramenta DCecci 2024!'
