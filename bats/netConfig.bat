@@ -1,10 +1,9 @@
 @echo off
 title NETCONFIG
-CHCP 1252 >NUL
-@REM mode con: cols=82 lines=10
+CHCP 65001 >NUL
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: Começo do processo de adquirir privilégios de Administrador ::
+:: ComeÃ§o do processo de adquirir privilÃ©gios de Administrador ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ECHO.
 
@@ -25,7 +24,7 @@ if '%errorlevel%' == '0' ( goto gotPrivileges ) else ( goto getPrivileges )
 if '%1'=='ELEV' (echo ELEV & shift /1 & goto gotPrivileges)
 ECHO.
 ECHO *****************************************************
-ECHO Verificando e adquirindo permissões de Administrador
+ECHO Verificando e adquirindo permissÃµes de Administrador
 ECHO *****************************************************
 
 ECHO Set UAC = CreateObject^("Shell.Application"^) > "%vbsGetPrivileges%"
@@ -50,6 +49,7 @@ exit /B
 :gotPrivileges
 setlocal & cd /d %~dp0
 if '%1'=='ELEV' (del "%vbsGetPrivileges%" 1>nul 2>nul  &  shift /1)
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::
@@ -62,12 +62,12 @@ set etherName=!etherName:~1!
 
 @color f4
 @echo ----------------------------------------------------------------------------------
-@echo ATENÇÃO: AS CONFIGURAÇÕES A SEGUIR PODEM MUDAR O COMPORTAMENTO DO SEU COMPUTADOR!
-@echo SIGA EM FRENTE SOMENTE COM AJUDA DO DEPARTAMENTO DE INFORMÁTICA!
+@echo ATENï¿½ï¿½O: AS CONFIGURAï¿½ï¿½ES A SEGUIR PODEM MUDAR O COMPORTAMENTO DO SEU COMPUTADOR!
+@echo SIGA EM FRENTE SOMENTE COM AJUDA DO DEPARTAMENTO DE INFORMï¿½TICA!
 @echo ----------------------------------------------------------------------------------
-@echo Você está em contato com o Departamento de informática?
+@echo Vocï¿½ estï¿½ em contato com o Departamento de informï¿½tica?
 @echo [1] SIM
-@echo [2] NÃO
+@echo [2] Nï¿½O
 @set /p safe= Escolha: 
 @if %safe% equ 1 goto reset 
 @if %safe% equ 2 goto thanks
@@ -79,7 +79,7 @@ goto conexao
 
 :erroConexao
 cls
-echo "%conexao%" não é uma opção válida!
+echo "%conexao%" nï¿½o ï¿½ uma opï¿½ï¿½o vï¿½lida!
 echo Vamos tentar novamente!
 echo.
 
@@ -101,7 +101,7 @@ if %conexao% gtr 4 goto erroConexao
 
 :local
 echo.
-echo Qual é o local de acesso?
+echo Qual ï¿½ o local de acesso?
 echo [1] INTERNO
 echo [2] EXTERNO
 set /p local= Escolha: 
@@ -111,14 +111,14 @@ if %local% gtr 2 goto local
 
 :faixa
 echo.
-set /p faixa= Qual é a faixa de IP? 
-set /p confirmaFaixa= Faixa "%faixa%" está correta? [S/N] 
+set /p faixa= Qual ï¿½ a faixa de IP? 
+set /p confirmaFaixa= Faixa "%faixa%" estï¿½ correta? [S/N] 
 if %confirmaFaixa% neq s goto faixa
 
 :ip
 echo.
-set /p ip= Qual será o IP final desta máquina? 
-set /p cofirmaIp= IP final %ip% está correto? [S/N] 
+set /p ip= Qual serï¿½ o IP final desta mï¿½quina? 
+set /p cofirmaIp= IP final %ip% estï¿½ correto? [S/N] 
 if %cofirmaIp% neq s goto ip
 
 :setarIP
@@ -131,8 +131,8 @@ goto thanks
 
 :restauraIP
 if exist "%userprofile%\ip.txt" (
-    echo Arquivo de configuração de IP encontrado!
-    echo Definindo novas configurações de IP! & timeout 1 >nul
+    echo Arquivo de configuraï¿½ï¿½o de IP encontrado!
+    echo Definindo novas configuraï¿½ï¿½es de IP! & timeout 1 >nul
 
     setlocal enabledelayedexpansion
     set counter=0
@@ -150,7 +150,7 @@ if exist "%userprofile%\ip.txt" (
     netsh interface ipv4 set address name="!etherName!" static !ip! !mascara! !gateway! >NUL & netsh interface ipv4 set dnsservers name="!etherName!" static !dns! >NUL
     goto thanks
     ) else (
-        echo Não existe um arquivo de IP da pasta de usuário. & timeout 2 >NUL
+        echo Nï¿½o existe um arquivo de IP da pasta de usuï¿½rio. & timeout 2 >NUL
         cls
         goto conexao
         )
@@ -160,14 +160,14 @@ if exist "%userprofile%\ip.txt" (
 :guardaIP
 for /f "tokens=3 delims=: " %%i in ('netsh interface ip show config name^="!etherName!" ^| findstr /c:"DHCP"') do @set isDHCP=%%i
 
-IF !isDHCP! equ Não (
-    echo Salvando configurações de backup em "%userprofile%\ip.txt"...
+IF !isDHCP! equ Nï¿½o (
+    echo Salvando configuraï¿½ï¿½es de backup em "%userprofile%\ip.txt"...
     for /f "tokens=2 delims=:" %%i in ('ipconfig ^| findstr /i "v4"') do @for /f "tokens=* delims= " %%j in ("%%i") do echo %%j > %userprofile%\ip.txt
     for /f "tokens=2 delims=:" %%i in ('ipconfig ^| findstr /i "Sub"') do @for /f "tokens=* delims= " %%j in ("%%i") do echo %%j >> %userprofile%\ip.txt
     for /f "tokens=2 delims=:" %%i in ('ipconfig ^| findstr /i "Gateway"') do @for /f "tokens=* delims= " %%j in ("%%i") do echo %%j >> %userprofile%\ip.txt
     for /f "tokens=2 delims=:" %%i in ('ipconfig -all ^| find "Servidores DNS"') do @for /f "tokens=* delims= " %%j in ("%%i") do echo %%j >> %userprofile%\ip.txt
     ) else (
-        echo Seu IP está dinâmico, por tanto não sou capaz de salvar as configurações de IP! & echo Voltando para o menu principal... & timeout 3 >NUL & goto conexao
+        echo Seu IP estï¿½ dinï¿½mico, por tanto nï¿½o sou capaz de salvar as configuraï¿½ï¿½es de IP! & echo Voltando para o menu principal... & timeout 3 >NUL & goto conexao
         )
 
 

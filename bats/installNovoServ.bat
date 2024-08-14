@@ -1,10 +1,9 @@
 @echo off
 title NETCONFIG
-CHCP 1252 >NUL
-@REM mode con: cols=82 lines=10
+CHCP 65001 >NUL
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: Começo do processo de adquirir privilégios de Administrador ::
+:: ComeÃ§o do processo de adquirir privilÃ©gios de Administrador ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ECHO.
 
@@ -25,7 +24,7 @@ if '%errorlevel%' == '0' ( goto gotPrivileges ) else ( goto getPrivileges )
 if '%1'=='ELEV' (echo ELEV & shift /1 & goto gotPrivileges)
 ECHO.
 ECHO *****************************************************
-ECHO Verificando e adquirindo permissões de Administrador
+ECHO Verificando e adquirindo permissÃµes de Administrador
 ECHO *****************************************************
 
 ECHO Set UAC = CreateObject^("Shell.Application"^) > "%vbsGetPrivileges%"
@@ -50,15 +49,16 @@ exit /B
 :gotPrivileges
 setlocal & cd /d %~dp0
 if '%1'=='ELEV' (del "%vbsGetPrivileges%" 1>nul 2>nul  &  shift /1)
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::
 ::::::::START CODING::::::::
 ::::::::::::::::::::::::::::
 
-echo Baixando a versão NovoServ...
+echo Baixando a versï¿½o NovoServ...
 echo.
 
 set path="C:\Program Files\WinRAR\";%path%
 
-curl -k https://www.cloudpma.net/index.php/s/xwc7TxLfBRerzSk/download -o %userprofile%\Downloads\NovoServ.zip && echo. && winrar x -ibck %userprofile%\Downloads\NovoServ.zip %userprofile%\Downloads\ && echo Download e extração concluídos com sucesso. && timeout 1 >nul && start "" "%userprofile%\Downloads\Instala NOVOSERV 2024\InstaladorNovoserv.exe" & echo. && echo Obrigado por utilizar mais uma ferramenta DCecci! && timeout 3 >nul
+curl -k https://www.cloudpma.net/index.php/s/xwc7TxLfBRerzSk/download -o %userprofile%\Downloads\NovoServ.zip && echo. && winrar x -ibck %userprofile%\Downloads\NovoServ.zip %userprofile%\Downloads\ && echo Download e extraï¿½ï¿½o concluï¿½dos com sucesso. && timeout 1 >nul && start "" "%userprofile%\Downloads\Instala NOVOSERV 2024\InstaladorNovoserv.exe" & echo. && echo Obrigado por utilizar mais uma ferramenta DCecci! && timeout 3 >nul

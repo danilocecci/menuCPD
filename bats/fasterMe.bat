@@ -1,10 +1,9 @@
 @echo off
-CHCP 1252 >NUL
+CHCP 65001 >NUL
 
-:-------------------------------------
-:: Começo do processo de adquirir privilégios de Administrador
-::::::::::::::::::::::::::::::::::::::::::::
-
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: Começo do processo de adquirir privilégios de Administrador ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ECHO.
 
 :init
@@ -49,14 +48,12 @@ exit /B
 :gotPrivileges
 setlocal & cd /d %~dp0
 if '%1'=='ELEV' (del "%vbsGetPrivileges%" 1>nul 2>nul  &  shift /1)
-:--------------------------------------
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::
 ::START CODING
 ::::::::::::::::::::::::::::
-
-@echo off
-CHCP 1252 >NUL
 
 title Desabilitando a Telemetria do Windows - DCecci
 echo Iniciando o processo... 
